@@ -9,20 +9,15 @@
 <meta name="description" content="So fühlt sich akoot an: Eine Ehrenamtliche sagt per Nachricht zu, und die Zusage steht sofort im Kalender der Koordination.">
 <style>
 :root{
-  --bg:#F4F7F7; --card:#FFFFFF; --ink:#0F2A2E; --muted:#5A6E70; --line:#DCE6E5;
-  --sea:#0E5E6F; --sea-2:#1C8197; --sea-soft:#E3EFEF; --beacon:#F2B33D; --beacon-soft:#FDF1D6;
-  --ok:#1F8A5B; --ok-soft:#E2F4EA; --gap:#C2452D; --gap-soft:#FBE7E2;
-  --chat:#EAF2F1; --me:#0E5E6F; --me-ink:#FFFFFF;
-  --shadow:0 1px 2px rgba(15,42,46,.06),0 12px 32px rgba(15,42,46,.08);
+  --bg:#FFFAE5; --card:#FFFFFF; --ink:#1A2B24; --muted:#5E6B5F; --line:#EADFC2;
+  --sea:#134C3B; --sea-2:#DC582A; --sea-soft:#E7EFE4; --beacon:#D4970F; --beacon-soft:#FBEFD2;
+  --ok:#1E6650; --ok-soft:#E3EEE3; --gap:#DC582A; --gap-soft:#FBE4D9;
+  --chat:#F3EBD3; --me:#134C3B; --me-ink:#FFFAE5;
+  --shadow:0 1px 2px rgba(19,76,59,.06),0 12px 32px rgba(19,76,59,.10);
   --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --display:"Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  --display:"Avenir Next","Avenir","Century Gothic","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root{
-  --bg:#0A1A1D; --card:#10262A; --ink:#E6F0EF; --muted:#9DB3B3; --line:#21424A;
-  --sea:#2C9AAE; --sea-2:#45B3C6; --sea-soft:#13343A; --beacon:#F5C15A; --beacon-soft:#3A2F14;
-  --ok:#3DBA80; --ok-soft:#123326; --gap:#E5735B; --gap-soft:#3A1E18;
-  --chat:#132E33; --me:#2C9AAE; --me-ink:#06171A;
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.35); color-scheme:dark}}
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -120,7 +115,7 @@ a{color:inherit}
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brand" href="index.html">akoot <span class="pill">Demo</span></a>
+  <a class="brand" href="index.html"><img src="akoot-sonne.png" alt="" style="height:30px;width:auto;vertical-align:middle"> <img src="akoot-schrift.png" alt="akoot" style="height:20px;width:auto;vertical-align:middle"> <span class="pill">Demo</span></a>
   <a class="back" href="index.html">← Zurück zu akoot</a>
 </div></header>
 
