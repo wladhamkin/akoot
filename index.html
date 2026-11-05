@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>akoot | Zusagen von Ehrenamtlichen ohne Abtippen</title>
-<meta name="description" content="akoot verbindet WhatsApp, Excel und Outlook bei Tafeln, Wohlfahrtsverbänden und Trägern mit Ehrenamt. Zusagen landen von selbst im Kalender. Ein Projekt von Enactus Köln, für Düsseldorf und Köln.">
+<meta name="description" content="akoot nimmt Hilfsorganisationen den Koordinationsstress ab. Ehrenamtliche sagen per Link oder erlaubtem Messenger zu, die Zusage landet von selbst in der Planung. Ohne Lizenzen für Ehrenamtliche. Ein Projekt von Enactus Köln mit Nösse, für Düsseldorf und Köln.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://akoot.de/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="akoot | Zusagen von Ehrenamtlichen ohne Abtippen">
-<meta property="og:description" content="Ehrenamtliche sagen per WhatsApp zu. akoot trägt es ein. Mehr Zeit für Menschen statt für Listen.">
+<meta property="og:description" content="Weniger Koordinationsstress, keine Lizenzen für Ehrenamtliche, mehr Zeit für die eigentliche Hilfe.">
 <meta property="og:locale" content="de_DE">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Service","name":"akoot","serviceType":"Digitalisierung der Ehrenamtskoordination","areaServed":["Düsseldorf","Köln","Nordrhein-Westfalen"],"provider":{"@type":"NGO","name":"Enactus an der Universität zu Köln e.V.","address":{"@type":"PostalAddress","streetAddress":"Weyertal 109","postalCode":"50931","addressLocality":"Köln","addressCountry":"DE"}},"founder":{"@type":"Person","name":"Wladimir Nikhamkin"},"description":"KI-Schicht, die WhatsApp, Excel, Outlook und Fachsoftware verbindet, damit Zusagen von Ehrenamtlichen ohne Abtippen im Kalender landen."}
+{"@context":"https://schema.org","@type":"Service","name":"akoot","serviceType":"Digitalisierung der Ehrenamtskoordination","areaServed":["Düsseldorf","Köln","Nordrhein-Westfalen"],"provider":{"@type":"NGO","name":"Enactus an der Universität zu Köln e.V.","address":{"@type":"PostalAddress","streetAddress":"Weyertal 109","postalCode":"50931","addressLocality":"Köln","addressCountry":"DE"}},"founder":{"@type":"Person","name":"Wladimir Nikhamkin"},"description":"Verbindet Link, Messenger, Excel, Outlook und Fachsoftware, damit Zusagen von Ehrenamtlichen ohne Abtippen in der Planung landen."}
 </script>
 <style>
 /* Layout: ruhige Seekarte, eine Bewegung im Hero (Nachricht wird zu Kalendereintrag), Leuchtturm-Gelb nur für Handlungen */
@@ -177,6 +177,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .done{background:var(--ok-soft);border-radius:16px;padding:16px;display:grid;gap:8px}
 .done b{color:var(--ok)}
 [hidden]{display:none!important}
+
+.gains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gn{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;display:grid;gap:10px;align-content:start}
+.gn p{color:var(--muted)}
+@media (max-width:900px){.gains{grid-template-columns:1fr}}
+.pt .lg{display:flex;align-items:center;justify-content:center;height:84px;background:#fff;border-radius:12px;padding:12px 16px;margin-bottom:10px}
+.pt .lg img{max-width:100%;max-height:56px;object-fit:contain}
+.pt .lg img.inv{filter:brightness(0);max-height:28px}
 </style>
 </head>
 <body>
@@ -193,9 +201,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <main>
 <div class="wrap hero">
   <div>
-    <p class="eyebrow">Für Tafeln, Wohlfahrtsverbände und Träger mit Ehrenamt</p>
-    <h1>Ehrenamtliche sagen per WhatsApp zu. akoot trägt es ein.</h1>
-    <p class="lead">Ohne neue App für die Helfenden und ohne neues System für Sie. akoot verbindet WhatsApp, Excel und Outlook. Ihre Koordination hat wieder Zeit für Menschen statt für Listen.</p>
+    <p class="eyebrow">Für Hilfsorganisationen mit Ehrenamt</p>
+    <h1>Weniger Koordinations&shy;stress. Mehr Zeit für die Hilfe.</h1>
+    <p class="lead">Ehrenamtliche sagen per Link zu oder über den Messenger, den Ihr Haus erlaubt. akoot trägt die Zusage in Ihre Planung ein. Ohne Abtippen, ohne neue App und ohne Lizenzen für Ehrenamtliche.</p>
     <div class="actions">
       <a class="btn" href="#kontakt">Termin buchen</a>
       <a class="btn ghost" href="demo.html">Demo</a>
@@ -203,11 +211,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <p class="trust">Entstanden aus einer Masterarbeit an der Universität zu Köln mit sieben Hilfsorganisationen aus NRW.</p>
   </div>
   <div class="visual" aria-hidden="true">
-    <div class="bubble"><small>Lena, WhatsApp, 19:42</small>Ich kann Samstag 10 bis 13 Uhr 🙂</div>
+    <div class="bubble"><small>Lena, per Link, 19:42</small>Ich kann Samstag 10 bis 13 Uhr 🙂</div>
     <div class="arrow">akoot trägt ein</div>
     <div class="cal">
-      <div class="row"><span>Do · Ausgabe 15–18</span><span class="tag">2 von 4</span></div>
-      <div class="row"><span>Fr · Sortieren 10–13</span><span class="tag">3 von 3</span></div>
+      <div class="row"><span>Do · Begleitung 15–18</span><span class="tag">2 von 4</span></div>
+      <div class="row"><span>Fr · Fahrdienst 10–13</span><span class="tag">3 von 3</span></div>
       <div class="row new"><span>Sa · Ausgabe 10–13 · <b>Lena</b></span><span class="tag new">neu</span></div>
     </div>
   </div>
@@ -224,6 +232,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
 </section>
 
+<section class="block wrap" aria-labelledby="gain-h">
+  <div class="head"><p class="eyebrow">Was sich ändert</p><h2 id="gain-h">Ihre Leute kümmern sich wieder um Menschen</h2></div>
+  <div class="gains">
+    <div class="gn"><h3>Weniger Koordinationsstress</h3><p>Zusagen landen von selbst in Ihrer Planung. Niemand tippt abends Listen ab oder sucht in Gruppenchats.</p></div>
+    <div class="gn"><h3>Kosten niedrig halten</h3><p>Ehrenamtliche brauchen keine Lizenz und keine App. Ihre Fachsoftware bleibt, wie sie ist.</p></div>
+    <div class="gn"><h3>Zeit für Ihr Handwerk</h3><p>Ihre Koordination kümmert sich um die Hilfe und die Menschen, nicht um Listen.</p></div>
+  </div>
+</section>
+
 <section class="block wrap" id="so" aria-labelledby="so-h">
   <div class="head">
     <p class="eyebrow">So funktioniert es</p>
@@ -231,7 +248,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <p>Ihre Leute arbeiten weiter so, wie sie es kennen. akoot sitzt dazwischen und übernimmt das Abtippen, Erinnern und Abgleichen.</p>
   </div>
   <div class="steps">
-    <article class="step"><span class="n">1</span><h3>Zusage per Nachricht</h3><p>Ehrenamtliche schreiben wie gewohnt per WhatsApp oder über einen Link. Keine App, kein Login.</p></article>
+    <article class="step"><span class="n">1</span><h3>Zusage per Nachricht</h3><p>Ehrenamtliche sagen per Link zu oder über den Messenger, den Ihr Haus erlaubt. Keine App, kein Login.</p></article>
     <article class="step"><span class="n">2</span><h3>Steht im Kalender</h3><p>akoot versteht Tag und Uhrzeit und trägt die Zusage in Ihren Outlook-Kalender und Ihre Einsatzliste ein. Bei Unklarem fragt es nach.</p></article>
     <article class="step"><span class="n">3</span><h3>Lücken gemeldet</h3><p>Erinnerung am Vortag für die Helfenden. Ihre Koordination sieht nur noch, wo jemand fehlt.</p></article>
   </div>
@@ -245,7 +262,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <p class="quote" id="founder-h">„Überall koordiniert die WhatsApp-Gruppe. Und abends tippt jemand alles ab.“</p>
     </div>
     <div class="text">
-      <p>Für meine Masterarbeit an der Universität zu Köln habe ich mit der Tafel, der AWO, der Lebenshilfe, einer Freiwilligenagentur und weiteren Organisationen gesprochen. Das Bild war überall gleich. Die eigentliche Koordination läuft über WhatsApp, Excel und Telefon. Neue Plattformen haben das selten gelöst, sie wurden zur nächsten Insel.</p>
+      <p>Für meine Masterarbeit an der Universität zu Köln habe ich mit der Tafel, der AWO, der Lebenshilfe, einer Freiwilligenagentur und weiteren Organisationen gesprochen. Das Bild war überall gleich. Die eigentliche Koordination läuft über WhatsApp, Excel und Telefon. Neue Plattformen haben das selten gelöst, sie wurden zur nächsten Insel. Und in der Fachsoftware haben Ehrenamtliche oft gar keinen Zugang, weil jede Lizenz extra kostet.</p>
       <p>Deshalb baue ich akoot andersherum. Es dockt an das an, was schon da ist. Damit die Menschen, die Ehrenamt organisieren, ihre Zeit wieder mit Menschen verbringen.</p>
       <p class="sig">Wladimir Nikhamkin<small>Founder akoot · ein Projekt von Enactus Köln · Umsetzung mit Nösse Consulting</small></p>
     </div>
@@ -260,7 +277,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="pack">
     <div class="pk"><span>Ist-Analyse</span><h3>Wo wird wirklich koordiniert?</h3><p>Welche Gruppen, Listen und Wege es gibt, und wie viele Minuten eine besetzte Schicht heute kostet.</p></div>
     <div class="pk"><span>Soll-Konzept</span><h3>Die Schicht auf einer Seite</h3><p>Welcher Ablauf zuerst, welche Daten wohin, und wer die Schicht betreibt.</p></div>
-    <div class="pk"><span>Umsetzung</span><h3>Ein Bereich, vier Wochen</h3><p>Pilot mit einer Zahl: Koordinationsminuten pro besetzter Schicht.</p></div>
+    <div class="pk"><span>Umsetzung</span><h3>Ein Bereich, vier Wochen</h3><p>Pilot mit einer Zahl, den Koordinationsminuten pro besetzter Schicht.</p></div>
     <div class="pk"><span>Service</span><h3>Damit es bleibt</h3><p>Feste Ansprechperson, Übergabe bei Wechseln im Team, Ausbau auf weitere Bereiche.</p></div>
   </div>
   <div class="pilot">
@@ -275,11 +292,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="tg"><h3>So arbeitet akoot</h3><ul>
       <li>Helfende brauchen keine neue App.</li>
       <li>Unklare Fälle entscheidet ein Mensch, nie die KI allein.</li>
-      <li>WhatsApp ist ein Angebot, ein Link funktioniert ab Tag 1.</li>
+      <li>Den Kanal bestimmen Ihre Datenschutzregeln. Ein Link funktioniert ab Tag 1, ein Messenger nur, wenn Ihr Haus ihn erlaubt.</li>
+      <li>Zusagen laufen nicht mehr über große Gruppen, in denen jeder jede Nummer sieht.</li>
     </ul></div>
     <div class="tg"><h3>Ihre Daten, Ihre Regeln</h3><ul>
       <li>Ihre Organisation bleibt Verantwortliche nach DSGVO.</li>
-      <li>So wenig Daten wie möglich: Vorname, Kontakt, Zusage.</li>
+      <li>So wenig Daten wie möglich, nur Vorname, Kontakt und Zusage.</li>
       <li>Wo die Daten liegen, legen wir gemeinsam im Soll-Konzept fest.</li>
     </ul></div>
   </div>
@@ -288,17 +306,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <section class="block wrap" aria-labelledby="partner-h" style="padding-top:0">
   <div class="head"><p class="eyebrow">Partner</p><h2 id="partner-h">Mit wem akoot entsteht</h2></div>
   <div class="partners">
-    <div class="pt"><b>Enactus Köln e.V.</b><span>Träger des Projekts</span></div>
-    <div class="pt"><b>Universität zu Köln</b><span>Forschung aus der Masterarbeit</span></div>
-    <div class="pt"><b>Gateway</b><span>Gründungsservice der Universität zu Köln</span></div>
-    <div class="pt"><b>Nösse Consulting</b><span>Umsetzung</span></div>
+    <div class="pt"><span class="lg"><img src="logo-enactus-koeln.svg" alt="Enactus Köln" loading="lazy"></span><b>Enactus Köln e.V.</b><span>Träger des Projekts</span></div>
+    <div class="pt"><span class="lg"><img src="logo-uni-koeln.svg" alt="Universität zu Köln" loading="lazy"></span><b>Universität zu Köln</b><span>Forschung aus der Masterarbeit</span></div>
+    <div class="pt"><span class="lg"><img src="logo-gateway.png" alt="Gateway Exzellenz Start-up Center" loading="lazy"></span><b>Gateway</b><span>Exzellenz Start-up Center der Universität zu Köln</span></div>
+    <div class="pt"><span class="lg"><img class="inv" src="logo-noesse.png" alt="Nösse Consulting" loading="lazy"></span><b>Nösse Consulting</b><span>Umsetzung</span></div>
   </div>
 </section>
 
 <section class="block wrap" aria-labelledby="faq-h" style="padding-top:0">
   <div class="head"><p class="eyebrow">Fragen</p><h2 id="faq-h">Was Leitungen zuerst wissen wollen</h2></div>
   <div class="faq">
-    <details><summary>Ersetzt akoot unsere Fachsoftware?</summary><p>Nein. akoot dockt an Outlook, Excel, WhatsApp und Ihre Fachsoftware an. Nichts wird abgeschaltet.</p></details>
+    <details><summary>Ersetzt akoot unsere Fachsoftware?</summary><p>Nein. akoot dockt an Outlook, Excel, Ihre Messenger und Ihre Fachsoftware an. Nichts wird abgeschaltet.</p></details>
+    <details><summary>Müssen wir WhatsApp nutzen?</summary><p>Nein. Ein Link reicht. Ob ein Messenger dazukommt und welcher, entscheiden Sie nach Ihren Datenschutzregeln.</p></details>
     <details><summary>Wer muss im Haus etwas lernen?</summary><p>Die Koordination bekommt eine Stunde Einweisung. Ehrenamtliche lernen nichts Neues.</p></details>
     <details><summary>Was kostet das?</summary><p>Das Erstgespräch kostet nichts. Danach bekommen Sie ein schriftliches Angebot für Ihren Pilot.</p></details>
     <details><summary>Wer steckt dahinter?</summary><p>akoot ist ein Projekt von Enactus Köln e.V., der studentischen Initiative für soziales Unternehmertum an der Universität zu Köln. Founder ist Wladimir Nikhamkin. Umgesetzt wird mit Nösse Consulting aus Leverkusen.</p></details>
@@ -402,7 +421,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     $("b-err").textContent="";
     var wann=datum(tag)+", "+zeit+" bis "+ende(zeit)+" Uhr";
     var sub="akoot | Terminanfrage "+("0"+tag.getDate()).slice(-2)+"."+("0"+(tag.getMonth()+1)).slice(-2)+". "+zeit+" Uhr";
-    var body="Guten Tag Herr Nikhamkin,\n\nich möchte einen Termin anfragen:\n"+wann+"\n\nE-Mail: "+m+"\nOrganisation: "+(o||"-")+"\n\nViele Grüße";
+    var body="Guten Tag Herr Nikhamkin,\n\nich möchte gern einen Termin anfragen.\n"+wann+"\n\nE-Mail: "+m+"\nOrganisation: "+(o||"-")+"\n\nViele Grüße";
     $("b-done").hidden=false;
     location.href="mailto:w.nikhamkin@noesse.de?subject="+encodeURIComponent(sub)+"&body="+encodeURIComponent(body);
   };
