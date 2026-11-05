@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Studie | Warum gemeinnützige Organisationen Ehrenamtsplattformen selten nutzen | akoot</title>
+<meta name="description" content="Kurzfassung der Masterarbeit von Wladimir Nikhamkin, Universität zu Köln 2026. 4 Hürden aus 8 Interviews mit 7 gemeinnützigen Organisationen. Was passiert, was hilft.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://akoot.de/studie.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Warum gemeinnützige Organisationen Ehrenamtsplattformen selten nutzen">
+<meta property="og:description" content="4 Hürden aus 8 Interviews. Was passiert, was hilft. Masterarbeit Universität zu Köln 2026.">
+<meta property="og:locale" content="de_DE">
+<style>
+:root{
+  --bg:#FFFAE5; --card:#FFFFFF; --ink:#1A2B24; --muted:#5E6B5F; --line:#EADFC2; --line-2:#F3EBD3;
+  --sea:#134C3B; --sea-2:#DC582A; --sea-soft:#E7EFE4; --beacon:#D4970F; --beacon-2:#B9820B; --beacon-soft:#FBEFD2;
+  --ok:#1E6650; --ok-soft:#E3EEE3; --warn:#9A6B06; --warn-soft:#FBEFD2; --bad:#B4483B; --bad-soft:#F8E5E2;
+  --deep:#0E3A2D; --deep-2:#134C3B; --deep-line:#2A5E4B; --deep-ink:#FBF6E2; --deep-muted:#B8C7B6;
+  --shadow:0 1px 2px rgba(19,76,59,.06),0 18px 44px rgba(19,76,59,.12);
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --display:"Avenir Next","Avenir","Century Gothic","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1.02rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);color:var(--sea);line-height:1.08;letter-spacing:-.025em;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.3rem,1.4rem + 3.6vw,4.1rem);font-weight:800}
+h2{font-size:clamp(1.8rem,1.3rem + 1.9vw,2.9rem);font-weight:800}
+h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+.accent{color:var(--sea-2)}
+.eyebrow{font-size:.85rem;font-weight:700;color:var(--sea-2);letter-spacing:.02em}
+:focus-visible{outline:3px solid var(--beacon);outline-offset:3px;border-radius:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45em;font-weight:700;text-decoration:none;padding:.8em 1.25em;border-radius:12px;background:var(--sea);color:#FFFAE5;border:0;cursor:pointer;font-size:.98rem;font-family:inherit;transition:background .15s,transform .15s}
+.btn:hover{background:var(--deep)}
+.btn.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{background:var(--sea-soft)}
+.btn.sm{padding:.55em .95em;font-size:.9rem;border-radius:10px}
+.link{color:var(--sea-2);font-weight:700;text-decoration:none}
+.link:hover{text-decoration:underline}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.check li{position:relative;padding-left:28px}
+.check li::before{content:"";position:absolute;left:2px;top:.45em;width:12px;height:7px;border-left:2px solid var(--ok);border-bottom:2px solid var(--ok);transform:rotate(-45deg)}
+.check.sm{gap:6px;font-size:.88rem;color:var(--muted)}
+section{position:relative}
+
+/* Kopf */
+.top{position:sticky;top:0;z-index:20;background:rgba(255,250,229,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:64px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:800;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink)}
+.brand img.sun{height:34px;width:auto}.brand img.word{height:22px;width:auto;margin-top:3px}
+.nav{display:flex;gap:22px;flex:1}
+.nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.93rem}
+.nav a:hover{color:var(--ink)}
+.top .act{display:flex;gap:10px;align-items:center}
+@media (max-width:900px){.nav{display:none}.top .act{margin-left:auto}}
+@media (max-width:420px){.top .act .ghost{display:none}}
+
+/* Hero */
+.hero{background:radial-gradient(1000px 480px at 85% -10%,var(--beacon-soft),transparent 60%),var(--bg);padding:64px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:48px;align-items:center}
+.hero .wrap>*{min-width:0}
+.hero .lead{font-size:1.15rem;color:var(--muted);margin-top:22px;max-width:36em}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero .check.sm{margin-top:24px}
+.stage{position:relative}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.map{position:relative;padding:18px 18px 52px}
+.map .hd{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line-2);padding-bottom:10px}
+.map .hd b{font-size:.95rem}.map .hd small{color:var(--muted);font-size:.78rem}
+.nodes{position:relative;height:250px;margin-top:12px}
+.nodes svg{position:absolute;inset:0;width:100%;height:100%}
+.nd{position:absolute;transform:translate(-50%,-50%);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:.78rem;font-weight:600;white-space:nowrap;box-shadow:0 1px 2px rgba(15,42,46,.06)}
+.nd.core{background:var(--sea);color:#FFFAE5;border-color:var(--sea);font-size:.88rem;padding:9px 14px;border-radius:12px}
+.floats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:-38px 14px 0;position:relative}
+.float{padding:12px 14px;font-size:.82rem}
+.float .t{display:flex;align-items:center;gap:7px;font-weight:700;font-size:.76rem;color:var(--muted);margin-bottom:5px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block}
+.dot.b{background:var(--beacon)}
+.f2{background:var(--deep);color:var(--deep-ink);border-color:var(--deep-line)}
+.f2 .t{color:var(--deep-muted)}
+.f2 .row{display:flex;justify-content:space-between;gap:16px;padding:4px 0;border-top:1px solid var(--deep-line);font-size:.8rem}
+.f2 .row:first-of-type{border-top:0}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--ok-soft);color:var(--ok)}
+.pill.w{background:var(--warn-soft);color:var(--warn)}
+@media (max-width:980px){.hero .wrap{grid-template-columns:1fr}}
+@media (max-width:560px){.floats{grid-template-columns:1fr;margin:-30px 8px 0}.nd{font-size:.7rem;padding:5px 8px}}
+
+/* Logos */
+.logos{padding:40px 0 56px;text-align:center}
+.logos p{color:var(--muted);font-size:.92rem}
+.logos .row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:28px 56px;margin-top:22px}
+.logos img{height:40px;width:auto;max-width:170px;object-fit:contain;filter:grayscale(1);opacity:.75}
+.logos img.inv{filter:brightness(0);opacity:.6;height:20px}
+
+/* Dunkler Ablauf */
+.dark{background:radial-gradient(700px 300px at 10% 0%,rgba(212,151,15,.28),transparent 70%),var(--deep);color:var(--deep-ink);padding:88px 0}
+.dark h2{color:#FBF6E2;max-width:16em}
+.dark .sub{color:var(--deep-muted);margin-top:16px;max-width:36em;font-size:1.08rem}
+.phases{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:1px solid var(--deep-line)}
+.ph{padding:18px 18px 0 0;border-top:2px solid transparent;margin-top:-1px}
+.ph:first-child{border-top-color:var(--beacon)}
+.ph small{font-family:ui-monospace,Menlo,monospace;color:#F2C14E;font-size:.75rem}
+.ph b{display:block;font-size:1.08rem;margin-top:6px;color:#FBF6E2}
+.ph span{color:var(--deep-muted);font-size:.88rem}
+.feat{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;margin-top:80px}
+.feat>*{min-width:0}
+.feat h3{font-size:clamp(1.5rem,1.2rem + 1vw,2rem);color:#FBF6E2;letter-spacing:-.02em}
+.feat p{color:var(--deep-muted);margin-top:14px}
+.feat .check{margin-top:20px;color:var(--deep-ink)}
+.feat .link{display:inline-block;margin-top:22px;color:#F2C14E}
+.dots{background:var(--deep-2);border:1px solid var(--deep-line);border-radius:20px;padding:36px;background-image:radial-gradient(rgba(157,179,179,.18) 1px,transparent 1px);background-size:16px 16px}
+.flow{display:grid;gap:10px;max-width:420px;margin:0 auto}
+.fl{background:var(--card);color:var(--ink);border-radius:12px;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.88rem}
+.fl small{display:block;color:var(--muted);font-size:.76rem}
+.arrow{justify-self:center;color:var(--deep-muted);font-size:.78rem}
+@media (max-width:900px){.phases{grid-template-columns:1fr 1fr;row-gap:22px}.feat{grid-template-columns:1fr;gap:28px}}
+
+/* Heller Abschnitt */
+.light{padding:96px 0}
+.split{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.split>*{min-width:0}
+.split .intro p{color:var(--muted);margin-top:16px;font-size:1.06rem;max-width:30em}
+.split .intro .link{display:inline-block;margin-top:20px}
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.bx{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.bx.wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;background:linear-gradient(135deg,#fff,var(--beacon-soft))}
+.bx .ic{width:34px;height:34px;border-radius:10px;background:var(--sea-soft);display:grid;place-items:center;color:var(--sea)}
+.bx .ic svg{width:18px;height:18px}
+.bx p{color:var(--muted);font-size:.94rem}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:.84rem}
+.mini .r{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;border-top:1px solid var(--line-2)}
+.mini .r:first-child{border-top:0}
+.mini .r span:last-child{color:var(--muted)}
+@media (max-width:900px){.split{grid-template-columns:1fr}.bento{grid-template-columns:1fr}.bx.wide{grid-template-columns:1fr}}
+
+/* Wissen */
+.know{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.know>*{min-width:0}
+.kcard{padding:20px}
+.kcard .hd{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--muted)}
+.kcard h4{margin:10px 0 6px;font-size:1.05rem}
+.kcard .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font-size:.74rem;padding:3px 9px;border-radius:999px;background:var(--sea-soft);color:var(--sea);font-weight:600}
+.kcard .note{margin-top:14px;padding:10px 12px;border-radius:10px;background:var(--beacon-soft);font-size:.82rem}
+.know .txt p{color:var(--muted);margin-top:14px;font-size:1.04rem}
+.know .check{margin-top:20px}
+@media (max-width:900px){.know{grid-template-columns:1fr}}
+
+/* Stimmen */
+.voices{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+.vq{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.vq.big{background:var(--sea-soft);border-color:transparent}
+.vq.big blockquote{font-size:1.25rem;font-weight:600;line-height:1.45}
+.vq blockquote{margin:0}
+.vq .q{font-size:2.2rem;line-height:1;color:var(--sea-2);font-weight:800}
+.vq cite{font-style:normal;font-size:.88rem;color:var(--muted)}
+.vq cite b{display:block;color:var(--ink)}
+.vcol{display:grid;gap:16px}
+.stat{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;color:var(--sea)}
+@media (max-width:900px){.voices{grid-template-columns:1fr}}
+
+/* Stufen */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;align-items:stretch}
+.tier{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px}
+.tier.hi{border:2px solid var(--sea-2);box-shadow:var(--shadow);transform:translateY(-6px)}
+.tier .nm{font-weight:700;color:var(--muted)}
+.tier .ti{font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
+.tier .ti small{font-size:.9rem;font-weight:500;color:var(--muted)}
+.tier p{color:var(--muted);font-size:.94rem}
+.tier .inc{background:var(--sea-soft);border-radius:12px;padding:12px 14px;font-size:.86rem}
+.tier .inc b{color:var(--sea);font-size:.8rem;display:block;margin-bottom:6px}
+.tier .btn{margin-top:auto}
+.tnote{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 28px;margin-top:24px;color:var(--muted);font-size:.9rem}
+@media (max-width:900px){.tiers{grid-template-columns:1fr}.tier.hi{transform:none}}
+
+/* Fragen */
+.faqw{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+.faqw .intro p{color:var(--muted);margin-top:14px}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--muted);font-weight:400;font-size:1.3rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--muted);margin-top:10px}
+@media (max-width:900px){.faqw{grid-template-columns:1fr;gap:20px}}
+
+/* Kontakt und Abschluss */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact>*{min-width:0}
+.contact .intro p{color:var(--muted);margin-top:14px;font-size:1.04rem}
+.contact .intro .check{margin-top:20px}
+.meta{display:grid;gap:4px;font-size:.92rem;color:var(--muted)}
+.meta b{color:var(--ink)}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+.cta{background:radial-gradient(600px 260px at 50% 110%,rgba(212,151,15,.40),transparent 70%),var(--deep);color:#FBF6E2;border-radius:24px;padding:72px 24px;text-align:center}
+.cta h2{color:#FBF6E2}
+.cta p{color:var(--deep-muted);margin:16px auto 0;max-width:34em}
+.cta .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.cta .btn.ghost{background:transparent;color:#FBF6E2;border-color:var(--deep-line)}
+.cta .btn.ghost:hover{background:var(--deep-2)}
+.cta .btn:not(.ghost),.dark .btn:not(.ghost){background:var(--beacon);color:#1A2B24}
+.cta .btn:not(.ghost):hover{background:#F2C14E}
+
+footer{border-top:1px solid var(--line);background:var(--card);padding:48px 0 28px;font-size:.92rem}
+.fgrid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px}
+.fgrid p{color:var(--muted);margin-top:10px;max-width:22em}
+.fgrid h4{margin:0 0 10px;font-size:.92rem}
+.fgrid a{display:block;color:var(--muted);text-decoration:none;padding:3px 0}
+.fgrid a:hover{color:var(--ink)}
+.fbot{border-top:1px solid var(--line);margin-top:32px;padding-top:18px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (max-width:760px){.fgrid{grid-template-columns:1fr 1fr}}
+
+/* Buchung: Kalender, Zeiten, Anfrage */
+.book{background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:20px;display:grid;gap:16px}
+.book h3{font-size:1rem}
+.calhead{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.calhead b{font-family:var(--display);font-size:1.1rem}
+.nb{width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.1rem;cursor:pointer}
+.nb:disabled{opacity:.35;cursor:default}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.grid .wd{font-size:.75rem;font-weight:700;color:var(--muted);padding-bottom:4px}
+.day{aspect-ratio:1;border-radius:999px;border:0;background:transparent;color:var(--muted);font:inherit;font-size:.95rem;opacity:.45;cursor:default;padding:0}
+.day.on{background:var(--sea-soft);color:var(--sea);font-weight:800;opacity:1;cursor:pointer}
+.day.on:hover{background:var(--sea);color:var(--on-sea)}
+.day.sel{background:var(--sea);color:var(--on-sea);opacity:1}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:8px}
+.slot{border:1px solid var(--sea);color:var(--sea);background:var(--card);border-radius:12px;padding:.6em 0;font:inherit;font-weight:700;cursor:pointer}
+.slot:hover{background:var(--sea-soft)}
+.slot.sel{background:var(--sea);color:var(--on-sea)}
+.hint{font-size:.9rem;color:var(--muted)}
+.fld{display:grid;gap:6px;font-size:.9rem;font-weight:600}
+.fld input{font:inherit;font-weight:400;padding:.7em .9em;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.book .btn{justify-content:center;width:100%}
+.done{background:var(--ok-soft);border-radius:16px;padding:16px;display:grid;gap:8px}
+.done b{color:var(--ok)}
+[hidden]{display:none!important}
+.book{background:var(--card)}
+
+.s-hero{padding:56px 0 48px}
+.s-hero h1{max-width:20em;font-size:clamp(2rem,1.3rem + 2.8vw,3.4rem)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.kpi b{display:block;font-family:var(--display);font-size:1.7rem;color:var(--sea-2);letter-spacing:-.02em;line-height:1.1}
+.kpi span{display:block;color:var(--muted);font-size:.9rem;margin-top:6px}
+@media (max-width:900px){.kpis{grid-template-columns:1fr 1fr}}
+.hl{display:grid;gap:18px;margin-top:32px}
+.hc{display:grid;grid-template-columns:auto 1fr;gap:18px;background:var(--card);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:18px;padding:26px}
+.c1{--c:#134C3B}.c2{--c:#DC582A}.c3{--c:#D4970F}.c4{--c:#2F6F58}
+.hn{width:38px;height:38px;border-radius:10px;background:var(--c);color:#FFFAE5;display:grid;place-items:center;font-weight:800;font-family:var(--display)}
+.hb{display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
+.hb h3{grid-column:1/-1;font-size:1.3rem}
+.fig{grid-column:1/-1;background:var(--bg);border-radius:12px;padding:16px}
+.fig small{display:block;color:var(--muted);font-size:.84rem;margin-top:10px}
+.wp h4,.wh h4{margin:0 0 6px;font-size:.92rem;color:var(--c)}
+.wp p,.wh p{color:var(--ink);font-size:.98rem}
+.chip{display:inline-block;font-size:.75rem;font-weight:700;padding:1px 8px;border-radius:999px;border:1px dashed var(--c);color:var(--c);margin-right:4px}
+.tl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.9rem;font-weight:600}
+.tl i{flex:1;min-width:24px;height:2px;background:var(--c)}
+.bars{display:grid;gap:8px}
+.bars div{display:grid;grid-template-columns:110px 1fr auto;gap:10px;align-items:center;font-size:.9rem}
+.bars i{display:block;height:14px;border-radius:4px;background:var(--c)}
+.bars b{font-size:.88rem}
+.vs{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.vs b{display:block;font-family:var(--display);font-size:2rem;color:var(--c);line-height:1}
+.vs span{font-size:.86rem;color:var(--muted)}
+.vs em{font-style:normal;color:var(--muted)}
+.fun{display:grid;gap:6px;max-width:320px}
+.fun div{text-align:center;padding:8px;border-radius:8px;font-weight:700;font-size:.88rem}
+.fun div:first-child{background:#E7EFE4;color:#2F6F58}
+.fun div:last-child{background:#2F6F58;color:#FFFAE5;margin:0 40px}
+@media (max-width:760px){.hc{grid-template-columns:1fr}.hb{grid-template-columns:1fr}.bars div{grid-template-columns:90px 1fr auto}}
+.loop{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+.lk{background:var(--deep-2);border:1px solid var(--deep-line);border-radius:14px;padding:18px}
+.lk b{color:#FBF6E2}.lk b span{color:#F2C14E}
+.lk p{color:var(--deep-muted);margin-top:6px;font-size:.92rem}
+.fazit{margin-top:24px;background:#FBF6E2;color:#1A2B24;border-radius:14px;padding:18px 20px;font-size:1.05rem}
+.fazit b{color:#DC582A;margin-right:6px}
+@media (max-width:760px){.loop{grid-template-columns:1fr}}
+.folgt{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.folgt>*{min-width:0}
+.folgt p{color:var(--muted);margin-top:14px;font-size:1.06rem}
+.gfx{margin:0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.gfx img{display:block;width:100%;height:340px;object-fit:cover;object-position:top;border-radius:10px}
+.gfx figcaption{font-size:.88rem;color:var(--muted);margin-top:10px}
+.gfx a{color:var(--sea-2);font-weight:700}
+@media (max-width:900px){.folgt{grid-template-columns:1fr}}
+.method{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.method p{color:var(--muted);margin-top:8px;font-size:.94rem}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="akoot Startseite">
+    <img class="sun" src="akoot-sonne.png" alt=""><img class="word" src="akoot-schrift.png" alt="akoot">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="index.html#ablauf">So funktioniert es</a>
+    <a href="index.html#wissen">Wissen</a>
+    <a href="index.html#stufen">Angebot</a>
+    <a href="index.html#fragen">Fragen</a>
+  </nav>
+  <div class="act">
+    <a class="btn ghost sm" href="demo.html">Demo</a>
+    <a class="btn sm" href="index.html#kontakt">Termin buchen</a>
+  </div>
+</div></header>
+<main>
+<section class="hero s-hero">
+  <div class="wrap">
+    <p class="eyebrow">Studie · Masterarbeit Universität zu Köln · 2026</p>
+    <h1 style="margin-top:14px">Warum gemeinnützige Organisationen Ehrenamtsplattformen selten nutzen</h1>
+    <p class="lead">4 Hürden aus 8 Interviews mit 7 gemeinnützigen Organisationen. Was passiert, was hilft.</p>
+    <div class="kpis">
+      <div class="kpi"><b>9 von 10</b><span>Themen wirken vor allem als Hürde</span></div>
+      <div class="kpi"><b>53 statt 2</b><span>Mails für einen Firmeneinsatz, über Plattform statt direkt</span></div>
+      <div class="kpi"><b>17 Std.</b><span>bezahlte Zeit pro Woche für über 600 Einsatzmöglichkeiten</span></div>
+      <div class="kpi"><b>3 bis 4 Monate</b><span>bis der Wechsel auf Signal wieder bei WhatsApp landete</span></div>
+    </div>
+    <div class="actions" style="margin-top:28px">
+      <a class="btn" href="#huerden">Ergebnisse lesen</a>
+      <a class="btn ghost" href="studie-grafik.png" download>Grafik herunterladen</a>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="huerden" style="padding-top:56px" aria-labelledby="h-h">
+  <div class="wrap">
+    <h2 id="h-h">Die 4 Hürden</h2>
+    <div class="hl">
+
+      <article class="hc c1">
+        <div class="hn">1</div>
+        <div class="hb">
+          <h3>Schatten-Infrastruktur aus WhatsApp, E-Mail und Excel</h3>
+          <div class="fig"><div class="tl"><span>Wechsel auf Signal versucht</span><i></i><span>ca. 3 bis 4 Monate</span><i></i><span>zurück zu WhatsApp</span></div><small>Ein Träger der Behindertenhilfe. In einem Sportverein entstanden nach Einführung einer eigenen App parallel neue WhatsApp-Gruppen.</small></div>
+          <div class="wp"><h4>Was passiert</h4><p>In den meisten Interviews koordinieren informelle Werkzeuge die Ehrenamtlichen. Neue Tools verdrängen sie nicht, alte Kanäle kehren zurück.</p></div>
+          <div class="wh"><h4>Was hilft</h4><p>Vor jeder Einführung die informellen Werkzeuge erfassen. Wechselkosten gegen realistischen Nutzen abwägen.</p></div>
+        </div>
+      </article>
+
+      <article class="hc c2">
+        <div class="hn">2</div>
+        <div class="hb">
+          <h3>Mehr Abstimmung statt weniger</h3>
+          <div class="fig"><div class="bars"><div><span>Über Plattform</span><i style="width:100%"></i><b>53 Mails</b></div><div><span>Direkt</span><i style="width:4%"></i><b>2 Mails *</b></div></div><small>Firmeneinsatz mit 15 Personen bei einer Tafel. Bis zuletzt unbestätigt. * Schätzung laut Befragtem.</small></div>
+          <div class="wp"><h4>Was passiert</h4><p>Als Zwischenschicht erzeugt die Plattform bei jedem Schritt eigene Rückfragen. Der Aufwand kann steigen statt sinken.</p></div>
+          <div class="wh"><h4>Was hilft</h4><p>An vorhandene Werkzeuge andocken, etwa Anmeldungen direkt in den eigenen Kalender. Doppeltes Eintragen zu sparen zählt mehr als Reichweite.</p></div>
+        </div>
+      </article>
+
+      <article class="hc c3">
+        <div class="hn">3</div>
+        <div class="hb">
+          <h3>Wer soll die Plattform betreiben?</h3>
+          <div class="fig"><div class="vs"><div><b>17</b><span>bezahlte Stunden pro Woche</span></div><em>für</em><div><b>600+</b><span>Einsatzmöglichkeiten</span></div></div><small>Eine Freiwilligenagentur. In einer studentischen Initiative wechselt der Vorstand etwa alle 6 Monate.</small></div>
+          <div class="wp"><h4>Was passiert</h4><p>Die Pflege einer neuen Plattform konkurriert direkt mit der Kernarbeit. Für viele ist die Frage nicht der Nutzen, sondern wer sie betreiben kann.</p></div>
+          <div class="wh"><h4>Was hilft</h4><p>Kostenlose Non-Profit-Angebote nutzen, wenn die Mitglieder digital versiert sind. <span class="chip">Übertragung</span> Vorher klären, wer pflegt und mit wie vielen Stunden.</p></div>
+        </div>
+      </article>
+
+      <article class="hc c4">
+        <div class="hn">4</div>
+        <div class="hb">
+          <h3>Bindung vor Reichweite</h3>
+          <div class="fig"><div class="fun"><div>Erstkontakt digital</div><div>Bindung persönlich</div></div><small>Auch bei einer studentischen, digital affinen Initiative.</small></div>
+          <div class="wp"><h4>Was passiert</h4><p>Plattformen sind auf Reichweite gebaut. In den meisten Interviews ist die größere Sorge, verlässliche Leute zu halten.</p></div>
+          <div class="wh"><h4>Was hilft</h4><p>Digital gewinnen, persönlich binden. <span class="chip">Empfehlung an Anbieter</span> Wiederkehrende Zusagen vor Suche und Matching stellen.</p></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="dark" aria-labelledby="z-h" style="padding:80px 0">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#F2C14E">Wie die Hürden zusammenwirken</p>
+    <h2 id="z-h" style="margin-top:10px">Die Hürden verstärken sich gegenseitig.</h2>
+    <div class="loop">
+      <div class="lk"><b>Datenschutzaufwand <span>→</span> knappe Ressourcen</b><p>bindet Verwaltungszeit ohne sichtbaren Nutzen</p></div>
+      <div class="lk"><b>Knappe Ressourcen <span>→</span> Schatten-Infrastruktur bleibt</b><p>keine Kapazität für einen Werkzeugwechsel</p></div>
+      <div class="lk"><b>Zersplitterter Markt <span>→</span> keine Netzwerkeffekte</b><p>Investition in Plattformen lohnt sich nicht</p></div>
+      <div class="lk"><b>Keine Netzwerkeffekte <span>→</span> Schatten-Infrastruktur bleibt</b><p>Plattformen wirken weniger wertvoll als vorhandene Werkzeuge</p></div>
+    </div>
+    <div class="fazit"><b>Fazit</b> Eine bessere Plattform, mehr Geld oder lockerere Regeln allein dürften in der Breite wenig ändern.</div>
+  </div>
+</section>
+
+<section class="light" aria-labelledby="f-h">
+  <div class="wrap folgt">
+    <div>
+      <p class="eyebrow">Was daraus folgt</p>
+      <h2 id="f-h" style="margin-top:10px">Nicht noch ein Tool.</h2>
+      <p>Die Arbeit zeigt, dass nicht die nächste Plattform fehlt. Es fehlt etwas, das sich in die vorhandenen Werkzeuge einfügt, die Pflege abnimmt und Bindung unterstützt statt Reichweite. Daraus ist akoot entstanden.</p>
+      <div class="actions" style="margin-top:24px">
+        <a class="btn" href="index.html#ablauf">So arbeitet akoot</a>
+        <a class="btn ghost" href="index.html#kontakt">Termin buchen</a>
+      </div>
+    </div>
+    <figure class="gfx">
+      <a href="studie-grafik.png" target="_blank" rel="noopener"><img src="studie-grafik-vorschau.png" alt="Erklärgrafik der Studie mit den 4 Hürden, Was passiert und Was hilft, sowie dem Zusammenwirken der Hürden" loading="lazy"></a>
+      <figcaption>Die ganze Studie als Grafik. <a href="studie-grafik.png" download>PNG</a> · <a href="studie-grafik.pdf" download>PDF</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="light" style="padding-top:0" aria-labelledby="m-h">
+  <div class="wrap">
+    <div class="method">
+      <h3 id="m-h">Methode</h3>
+      <p>8 Interviews mit 9 Befragten aus 7 gemeinnützigen Organisationen in Deutschland, Januar bis April 2026, je ca. 35 bis 90 Minuten. Qualitativ, Inhaltsanalyse nach Mayring, TOE-Modell (Technik, Organisation, Umfeld), 10 Themen. Analytische, keine statistische Verallgemeinerung. Masterarbeit Wladimir Nikhamkin, Universität zu Köln, 2026.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="index.html"><img class="sun" src="akoot-sonne.png" alt=""><img class="word" src="akoot-schrift.png" alt="akoot"></a>
+        <p>Die unsichtbare Schicht für Hilfsorganisationen. Ein Projekt von Enactus Köln, umgesetzt mit Nösse Consulting.</p>
+      </div>
+      <div><h4>Angebot</h4><a href="index.html#ablauf">So funktioniert es</a><a href="index.html#wissen">Wissen</a><a href="index.html#stufen">Kompass, Schicht, Verbund</a><a href="demo.html">Demo</a></div>
+      <div><h4>Für wen</h4><a href="index.html#stufen">Hilfsorganisationen</a><a href="index.html#stufen">Verbände</a><a href="index.html#stufen">Kommunen und Stiftungen</a></div>
+      <div><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="impressum.html#datenschutz">Datenschutz</a><a href="index.html#kontakt">Kontakt</a></div>
+    </div>
+    <div class="fbot"><span>© 2026 akoot · Enactus an der Universität zu Köln e.V.</span><span>Gemacht mit Hätz</span></div>
+  </div>
+</footer>
+</body>
+</html>

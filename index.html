@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
-<title>akoot | Ihre Systeme bleiben. akoot verbindet sie.</title>
+<title>akoot | Nicht noch ein Tool. Mehr Zeit für Menschen.</title>
 <meta name="description" content="akoot verbindet die Systeme von Hilfsorganisationen im Hintergrund, hält das Wissen der Organisation fest und macht Berichte für Förderer leichter. Menschen helfen Menschen, akoot hilft im Hintergrund. Ein Projekt von Enactus Köln mit Nösse.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://akoot.de/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="akoot | Ihre Systeme bleiben. akoot verbindet sie.">
+<meta property="og:title" content="akoot | Nicht noch ein Tool. Mehr Zeit für Menschen.">
 <meta property="og:description" content="Weniger Inseln, Wissen das bleibt, mehr Zeit für Menschen. Für Hilfsorganisationen, Verbände und Kommunen.">
 <meta property="og:locale" content="de_DE">
 <script type="application/ld+json">
@@ -246,6 +246,11 @@ footer{border-top:1px solid var(--line);background:var(--card);padding:48px 0 28
 .done b{color:var(--ok)}
 [hidden]{display:none!important}
 .book{background:var(--card)}
+.studyteaser{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px;text-decoration:none;color:inherit;box-shadow:var(--shadow);overflow:hidden}
+.studyteaser p{color:var(--muted);margin-top:12px}
+.studyteaser img{width:100%;height:260px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line)}
+.studyteaser:hover{border-color:var(--sea-2)}
+@media (max-width:760px){.studyteaser{grid-template-columns:1fr;padding:22px}}
 </style>
 </head>
 <body>
@@ -258,6 +263,7 @@ footer{border-top:1px solid var(--line);background:var(--card);padding:48px 0 28
     <a href="#wissen">Wissen</a>
     <a href="#stufen">Angebot</a>
     <a href="#fragen">Fragen</a>
+    <a href="studie.html">Studie</a>
   </nav>
   <div class="act">
     <a class="btn ghost sm" href="demo.html">Demo</a>
@@ -270,8 +276,8 @@ footer{border-top:1px solid var(--line);background:var(--card);padding:48px 0 28
   <div class="wrap">
     <div>
       <p class="eyebrow">Für Hilfsorganisationen, Verbände und Kommunen</p>
-      <h1 style="margin-top:14px">Ihre Systeme bleiben.<br><span class="accent">akoot verbindet sie.</span></h1>
-      <p class="lead">Fachsoftware, Dienstplan, Vermittlung, Tabellen und Messenger laufen heute nebeneinander. akoot verbindet sie im Hintergrund, hält fest, was Ihr Team weiß, und bereitet Berichte für Förderer vor. Damit Ihre Leute Zeit für Menschen haben.</p>
+      <h1 style="margin-top:14px">Nicht noch ein Tool.<br><span class="accent">Mehr Zeit für Menschen.</span></h1>
+      <p class="lead">akoot fügt sich in das ein, was Sie schon nutzen. Zusagen, Stunden und Nachweise laufen von selbst, und Sie sehen, was Ihr Ehrenamt bewirkt.</p>
       <div class="actions">
         <a class="btn" href="#kontakt">Termin buchen</a>
         <a class="btn ghost" href="#ablauf">So funktioniert es</a>
@@ -327,6 +333,20 @@ footer{border-top:1px solid var(--line);background:var(--card);padding:48px 0 28
       <img src="logo-gateway.png" alt="Gateway Exzellenz Start-up Center der Universität zu Köln" loading="lazy">
       <img class="inv" src="logo-noesse.png" alt="Nösse Consulting" loading="lazy">
     </div>
+  </div>
+</section>
+
+<section class="light" style="padding:8px 0 64px" aria-labelledby="st-h">
+  <div class="wrap">
+    <a class="studyteaser" href="studie.html">
+      <div>
+        <p class="eyebrow">Die Studie hinter akoot</p>
+        <h2 id="st-h" style="margin-top:8px">Von 10 Themen wirken 9 vor allem als Hürde.</h2>
+        <p>Warum gemeinnützige Organisationen Ehrenamtsplattformen selten nutzen. 8 Interviews, 7 Organisationen, Universität zu Köln 2026.</p>
+        <span class="link" style="display:inline-block;margin-top:16px">Zur Studie →</span>
+      </div>
+      <img src="studie-grafik-vorschau.png" alt="Vorschau der Erklärgrafik zur Studie" loading="lazy">
+    </a>
   </div>
 </section>
 
@@ -439,8 +459,8 @@ footer{border-top:1px solid var(--line);background:var(--card);padding:48px 0 28
       <cite><b>Ergebnis der Masterarbeit</b>Interviews mit Tafel, AWO, Lebenshilfe, einer Freiwilligenagentur und weiteren Organisationen in NRW, Universität zu Köln 2026</cite>
     </div>
     <div class="vcol">
-      <div class="vq"><div><div class="stat">53</div><p style="color:var(--muted)">Mails für einen einzigen Firmeneinsatz bei einer Tafel. Im direkten Kontakt hätten zwei gereicht.</p></div><cite><b>Geschäftsführung einer Kölner Tafel</b>Interview zur Masterarbeit, Januar 2026</cite></div>
-      <div class="vq"><p>Ehrenamtliche haben in der Fachsoftware oft gar keinen Zugang, weil jeder Zugang eine eigene Lizenz braucht.</p><cite><b>IT-Leitung eines Trägers</b>Interview zur Masterarbeit, Februar 2026</cite></div>
+      <div class="vq"><div><div class="stat">53</div><p style="color:var(--muted)">Mails für einen einzigen Firmeneinsatz bei einer Tafel. Im direkten Kontakt hätten zwei gereicht.</p></div><cite><b>Eine Tafel</b>Interview zur Masterarbeit, 2026</cite></div>
+      <div class="vq"><p>Ehrenamtliche haben in der Fachsoftware oft gar keinen Zugang, weil jeder Zugang eine eigene Lizenz braucht.</p><cite><b>Ein Träger der Behindertenhilfe</b>Interview zur Masterarbeit, 2026</cite></div>
     </div>
   </div>
 </section>
@@ -571,7 +591,7 @@ footer{border-top:1px solid var(--line);background:var(--card);padding:48px 0 28
         <a class="brand" href="#"><img class="sun" src="akoot-sonne.png" alt=""><img class="word" src="akoot-schrift.png" alt="akoot"></a>
         <p>Die unsichtbare Schicht für Hilfsorganisationen. Ein Projekt von Enactus Köln, umgesetzt mit Nösse Consulting.</p>
       </div>
-      <div><h4>Angebot</h4><a href="#ablauf">So funktioniert es</a><a href="#wissen">Wissen</a><a href="#stufen">Kompass, Schicht, Verbund</a><a href="demo.html">Demo</a></div>
+      <div><h4>Angebot</h4><a href="studie.html">Studie</a><a href="#ablauf">So funktioniert es</a><a href="#wissen">Wissen</a><a href="#stufen">Kompass, Schicht, Verbund</a><a href="demo.html">Demo</a></div>
       <div><h4>Für wen</h4><a href="#stufen">Hilfsorganisationen</a><a href="#stufen">Verbände</a><a href="#stufen">Kommunen und Stiftungen</a></div>
       <div><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="impressum.html#datenschutz">Datenschutz</a><a href="#kontakt">Kontakt</a></div>
     </div>
