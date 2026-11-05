@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Demo | akoot</title>
+<meta name="description" content="So fühlt sich akoot an: Eine Ehrenamtliche sagt per Nachricht zu, und die Zusage steht sofort im Kalender der Koordination.">
+<style>
+:root{
+  --bg:#F4F7F7; --card:#FFFFFF; --ink:#0F2A2E; --muted:#5A6E70; --line:#DCE6E5;
+  --sea:#0E5E6F; --sea-2:#1C8197; --sea-soft:#E3EFEF; --beacon:#F2B33D; --beacon-soft:#FDF1D6;
+  --ok:#1F8A5B; --ok-soft:#E2F4EA; --gap:#C2452D; --gap-soft:#FBE7E2;
+  --chat:#EAF2F1; --me:#0E5E6F; --me-ink:#FFFFFF;
+  --shadow:0 1px 2px rgba(15,42,46,.06),0 12px 32px rgba(15,42,46,.08);
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --display:"Avenir Next","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0A1A1D; --card:#10262A; --ink:#E6F0EF; --muted:#9DB3B3; --line:#21424A;
+  --sea:#2C9AAE; --sea-2:#45B3C6; --sea-soft:#13343A; --beacon:#F5C15A; --beacon-soft:#3A2F14;
+  --ok:#3DBA80; --ok-soft:#123326; --gap:#E5735B; --gap-soft:#3A1E18;
+  --chat:#132E33; --me:#2C9AAE; --me-ink:#06171A;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.35); color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:3px solid var(--beacon);outline-offset:2px;border-radius:8px}
+
+/* Kopf */
+.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:-.02em;text-decoration:none}
+.pill{font-family:var(--font);font-size:.75rem;font-weight:600;padding:.25em .7em;border-radius:999px;background:var(--beacon-soft);color:var(--ink)}
+.back{display:inline-flex;align-items:center;gap:.4em;text-decoration:none;font-weight:600;padding:.55em 1em;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+.back:hover{border-color:var(--sea)}
+
+/* Intro */
+.intro{padding-block:36px 20px;display:grid;gap:10px}
+.intro h1{font-family:var(--display);font-size:clamp(1.7rem,1.3rem + 2vw,2.6rem);line-height:1.1;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.intro p{margin:0;color:var(--muted);max-width:62ch}
+
+/* Bühne */
+.stage{display:grid;grid-template-columns:330px 1fr;gap:24px;align-items:start;padding-bottom:28px}
+.stage>*{min-width:0}
+
+/* Handy */
+.phone{background:#0B1416;border-radius:38px;padding:10px;box-shadow:var(--shadow)}
+.screen{background:var(--card);border-radius:30px;overflow:hidden;display:flex;flex-direction:column;height:560px}
+.chat-head{display:flex;align-items:center;gap:10px;padding:16px 16px 12px;border-bottom:1px solid var(--line)}
+.avatar{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--sea),var(--sea-2));display:grid;place-items:center;color:#fff;font-weight:800}
+.chat-head b{display:block;font-size:.95rem}
+.chat-head small{color:var(--muted);font-size:.78rem}
+.chat{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--chat)}
+.msg{max-width:84%;padding:9px 12px;border-radius:16px;font-size:.9rem;line-height:1.4;white-space:pre-line;animation:pop .25s ease-out}
+.msg.in{align-self:flex-start;background:var(--card);border-bottom-left-radius:6px}
+.msg.out{align-self:flex-end;background:var(--me);color:var(--me-ink);border-bottom-right-radius:6px}
+.typing{align-self:flex-start;background:var(--card);padding:10px 14px;border-radius:16px;display:flex;gap:4px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+.qr{display:flex;flex-wrap:wrap;gap:6px}
+.qr button{font:inherit;font-size:.82rem;border:1px solid var(--sea);color:var(--sea);background:var(--card);border-radius:999px;padding:.35em .8em;cursor:pointer}
+.compose{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:var(--card)}
+.compose input{flex:1;min-width:0;font:inherit;font-size:.9rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:.6em 1em}
+.compose button{border:0;border-radius:999px;background:var(--sea);color:#fff;font-weight:700;padding:0 1em;cursor:pointer}
+
+.try{margin-top:14px;display:grid;gap:8px}
+.try h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0}
+.try button{font:inherit;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:.75em .9em;cursor:pointer;display:flex;gap:10px;align-items:center;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+.try button:hover{border-color:var(--sea)}
+.try .n{flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--sea-soft);color:var(--sea);font-weight:800;font-size:.85rem}
+.reset{justify-self:start;font:inherit;font-size:.85rem;color:var(--muted);background:none;border:0;cursor:pointer;text-decoration:underline}
+
+/* Koordination */
+.board{display:grid;gap:16px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow)}
+.kpi b{display:block;font-family:var(--display);font-size:1.8rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:.85rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 12px;font-size:1rem;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card h3 small{font-weight:500;color:var(--muted);font-size:.82rem}
+
+.understood{display:flex;flex-wrap:wrap;gap:8px;min-height:38px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:.4em .8em;border-radius:999px;background:var(--sea-soft);font-size:.88rem;animation:pop .25s ease-out}
+.chip.ok{background:var(--ok-soft);color:var(--ok);font-weight:700}
+.chip.ask{background:var(--beacon-soft);font-weight:700}
+.chip.gap{background:var(--gap-soft);color:var(--gap);font-weight:700}
+.hint{color:var(--muted);font-size:.9rem}
+
+.week{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.day{background:var(--bg);border-radius:14px;padding:8px;min-height:170px;display:flex;flex-direction:column;gap:6px}
+.day h4{margin:0 0 2px;font-size:.78rem;color:var(--muted);font-weight:600}
+.shift{background:var(--card);border-radius:12px;padding:8px;border:1px solid var(--line);font-size:.8rem;transition:transform .3s,box-shadow .3s}
+.shift .t{font-weight:700}
+.bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin:6px 0 4px}
+.bar i{display:block;height:100%;border-radius:6px;transition:width .6s ease}
+.shift .who{color:var(--muted);font-size:.74rem;line-height:1.3}
+.shift.flash{transform:scale(1.04);box-shadow:0 0 0 3px var(--beacon)}
+
+.gaps{display:grid;gap:8px}
+.gapitem{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;background:var(--gap-soft)}
+.gapitem.part{background:var(--beacon-soft)}
+.gapitem button{font:inherit;font-size:.82rem;border:0;border-radius:999px;background:var(--ink);color:var(--bg);padding:.4em .9em;cursor:pointer;white-space:nowrap}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);opacity:0;background:var(--ink);color:var(--bg);padding:.7em 1.1em;border-radius:999px;font-size:.9rem;transition:.3s;pointer-events:none;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.foot{padding-block:24px 40px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cta{display:inline-flex;gap:.5em;align-items:center;background:var(--beacon);color:#1B1606;font-weight:800;text-decoration:none;padding:.75em 1.2em;border-radius:999px}
+
+@keyframes pop{from{opacity:0;transform:translateY(6px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes blink{0%,100%{opacity:.3}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:900px){.stage{grid-template-columns:1fr}.phone{max-width:360px;margin:0 auto;width:100%}.try{max-width:360px;margin:14px auto 0;width:100%}}
+@media (max-width:620px){.week{grid-template-columns:repeat(2,1fr)}.kpis{grid-template-columns:1fr 1fr}.kpis .kpi:last-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html">akoot <span class="pill">Demo</span></a>
+  <a class="back" href="index.html">← Zurück zu akoot</a>
+</div></header>
+
+<main class="wrap">
+  <section class="intro">
+    <h1>Eine Nachricht rein. Der Plan ist voll.</h1>
+    <p>Links schreibt eine Ehrenamtliche der Muster-Tafel, so wie sie es heute schon tut. Rechts sehen Sie, was bei Ihrer Koordination ankommt. Tippen Sie auf einen der drei Fälle.</p>
+  </section>
+
+  <section class="stage">
+    <div>
+      <div class="phone"><div class="screen">
+        <div class="chat-head"><div class="avatar">T</div><div><b>Tafel Musterstadt</b><small>Einsatzplanung · antwortet sofort</small></div></div>
+        <div class="chat" id="chat" aria-live="polite"></div>
+        <form class="compose" id="form" autocomplete="off">
+          <input id="text" type="text" placeholder="Als Lena schreiben …" aria-label="Eigene Nachricht">
+          <button type="submit" aria-label="Senden">➤</button>
+        </form>
+      </div></div>
+      <div class="try">
+        <h2>Probieren Sie</h2>
+        <button type="button" data-msg="Ich kann Samstag 10 bis 13 Uhr"><span class="n">1</span>„Ich kann Samstag 10 bis 13 Uhr“</button>
+        <button type="button" data-msg="Samstag geht bei mir"><span class="n">2</span>„Samstag geht bei mir“</button>
+        <button type="button" data-msg="Bin Freitag leider krank" data-who="Jonas"><span class="n">3</span>Jonas: „Bin Freitag leider krank“</button>
+        <button type="button" class="reset" id="reset">Von vorn beginnen</button>
+      </div>
+    </div>
+
+    <div class="board">
+      <div class="kpis">
+        <div class="kpi"><b id="kAuto">0</b><span>ohne Abtippen eingetragen</span></div>
+        <div class="kpi"><b id="kMin">0 Min.</b><span>Koordination gespart</span></div>
+        <div class="kpi"><b id="kGaps">0</b><span>Plätze noch offen</span></div>
+      </div>
+      <div class="card">
+        <h3>Was akoot verstanden hat <small>der Mensch entscheidet bei Unklarem</small></h3>
+        <div class="understood" id="understood"><span class="hint">Noch keine Nachricht.</span></div>
+      </div>
+      <div class="card">
+        <h3>Ihr Kalender <small>Woche 26. bis 31. Oktober</small></h3>
+        <div class="week" id="week"></div>
+      </div>
+      <div class="card">
+        <h3>Lücken <small>akoot meldet, Sie entscheiden</small></h3>
+        <div class="gaps" id="gaps"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>Demo mit erfundenen Namen und Daten. Es wird nichts gespeichert oder übertragen.</span>
+    <a class="cta" href="index.html#kontakt">Termin buchen</a>
+  </div>
+</main>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+"use strict";
+var DAYS=[{k:"mo",l:"Mo 26.",w:["montag","mo"]},{k:"di",l:"Di 27.",w:["dienstag","di"]},{k:"mi",l:"Mi 28.",w:["mittwoch","mi"]},{k:"do",l:"Do 29.",w:["donnerstag","do"]},{k:"fr",l:"Fr 30.",w:["freitag","fr"]},{k:"sa",l:"Sa 31.",w:["samstag","sa","sonnabend"]}];
+var BASE=[
+ {id:"mo1",d:"mo",f:14,t:17,n:"Sortieren",need:3,p:["Aylin","Peter","Mira"]},
+ {id:"di1",d:"di",f:10,t:13,n:"Ausgabe",need:4,p:["Grete","Hasan","Ole","Rita"]},
+ {id:"mi1",d:"mi",f:8,t:11,n:"Abholung",need:2,p:["Kurt"],k:["fahr","abhol"]},
+ {id:"do1",d:"do",f:15,t:18,n:"Ausgabe",need:4,p:["Sven","Tanja"]},
+ {id:"fr1",d:"fr",f:10,t:13,n:"Sortieren",need:3,p:["Jonas","Ida","Emre"]},
+ {id:"sa1",d:"sa",f:10,t:13,n:"Ausgabe",need:4,p:["Nora","Willi"]},
+ {id:"sa2",d:"sa",f:13,t:16,n:"Aufräumen",need:2,p:["Bea"]}];
+var S,auto,me="Lena";
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]})}
+function day(k){for(var i=0;i<DAYS.length;i++)if(DAYS[i].k===k)return DAYS[i]}
+function lab(s){return s.n+" "+s.f+" bis "+s.t+" Uhr"}
+function toast(t){var e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(e._t);e._t=setTimeout(function(){e.classList.remove("show")},2600)}
+function init(){S=JSON.parse(JSON.stringify(BASE));auto=0;$("chat").innerHTML="";
+ say("in","Hallo! Schreib einfach, wann du kannst. Mit „Mensch“ erreichst du die Koordination.");
+ $("understood").innerHTML='<span class="hint">Noch keine Nachricht.</span>';render()}
+function say(dir,text,who){var d=document.createElement("div");d.className="msg "+dir;d.textContent=(who&&who!==me?who+": ":"")+text;$("chat").appendChild(d);$("chat").scrollTop=1e6}
+function chips(list){$("understood").innerHTML=list.map(function(c){return'<span class="chip '+(c[1]||"")+'">'+esc(c[0])+"</span>"}).join("")}
+function typing(cb){var t=document.createElement("div");t.className="typing";t.innerHTML="<i></i><i></i><i></i>";$("chat").appendChild(t);$("chat").scrollTop=1e6;setTimeout(function(){t.remove();cb()},650)}
+function parse(x){var t=" "+x.toLowerCase().replace(/[.,!?]/g," ")+" ",r={a:"?",d:null,f:null,t:null,kw:null};
+ if(/\bmensch\b/.test(t)){r.a="mensch";return r}
+ if(/krank|kann (doch )?nicht|leider nicht|absag|schaffe es nicht/.test(t))r.a="ab";else if(/kann|geht|dabei|komme|zeit|passt|fahren/.test(t))r.a="zu";
+ DAYS.forEach(function(d){d.w.forEach(function(w){if(new RegExp("\\b"+w+"\\b").test(t))r.d=d.k})});
+ var m=t.match(/(\d{1,2})(?::\d{2})?\s*(?:uhr)?\s*(?:bis|-|–)\s*(\d{1,2})/);if(m){r.f=+m[1];r.t=+m[2]}else{var a=t.match(/ab\s*(\d{1,2})/);if(a)r.f=+a[1]}
+ if(/fahr|abhol/.test(t))r.kw="fahr";return r}
+function cands(r){return S.filter(function(s){if(!r.d||s.d!==r.d)return false;if(r.kw&&!(s.k||[]).length)return false;if(r.f!==null&&r.t!==null)return r.f<s.t&&r.t>s.f;if(r.f!==null)return r.f>=s.f-.5&&r.f<s.t;return true})}
+function handle(text,who,forced){who=who||me;say("out",text,who);var r=parse(text),c=forced?[forced]:cands(r);if(forced)r.a="zu";
+ typing(function(){
+  if(r.a==="mensch"){chips([["An Koordination weitergeleitet","ask"]]);say("in","Ich sage der Koordination Bescheid. Sie meldet sich heute noch.");return}
+  if(r.a==="ab"&&c.length){var s=null;c.forEach(function(x){if(x.p.indexOf(who)>-1)s=x});
+   if(!s){chips([["Absage, aber keine Schicht gefunden","ask"]]);say("in","Ich finde dich an dem Tag in keiner Schicht. Schreib „Mensch“, dann klärt das die Koordination.");return}
+   s.p.splice(s.p.indexOf(who),1);auto++;chips([[who],["Absage","gap"],[day(s.d).l+" · "+lab(s)],["ausgetragen und Lücke gemeldet","ok"]]);render(s.id);
+   say("in","Gute Besserung, "+who+"! Ich habe dich ausgetragen und der Koordination Bescheid gegeben.");toast("Lücke gemeldet: "+day(s.d).l+" "+s.n);return}
+  if(r.a==="zu"&&c.length===1){var sh=c[0];
+   if(sh.p.indexOf(who)>-1){chips([["Schon eingetragen","ok"]]);say("in","Du bist schon eingetragen. Danke!");return}
+   if(sh.p.length>=sh.need){chips([[day(sh.d).l+" · "+lab(sh)],["Schicht voll","ask"],["Alternativen angeboten"]]);say("in","Danke! Die Schicht ist schon voll. Offen ist noch:");offer(S.filter(function(x){return x.p.length<x.need}).slice(0,3));return}
+   sh.p.push(who);auto++;chips([[who],["Zusage","ok"],[day(sh.d).l+" · "+lab(sh)],["im Kalender","ok"]]);render(sh.id);
+   say("in","Danke, "+who+"! Du bist eingetragen: "+day(sh.d).l+", "+lab(sh)+". Ich erinnere dich am Vortag.");toast("Neu im Kalender: "+who+", "+day(sh.d).l+" "+sh.n);return}
+  if(r.a==="zu"&&c.length>1){chips([[day(r.d).l],["zwei Schichten möglich","ask"],["fragt kurz nach"]]);say("in","Super! Am "+day(r.d).l+" gibt es zwei Schichten. Welche passt dir?");offer(c);return}
+  chips([["nicht sicher verstanden","ask"],["fragt nach statt zu raten"]]);say("in","Das habe ich nicht sicher verstanden. Schreib mir Tag und Uhrzeit, zum Beispiel „Samstag 10 bis 13 Uhr“.")})}
+function offer(list){var w=document.createElement("div");w.className="qr";list.forEach(function(s){var b=document.createElement("button");b.type="button";b.textContent=day(s.d).l+" "+lab(s)+(s.p.length>=s.need?" (voll)":"");b.onclick=function(){Array.prototype.forEach.call(w.children,function(x){x.disabled=true});handle(b.textContent,me,s)};w.appendChild(b)});$("chat").appendChild(w);$("chat").scrollTop=1e6}
+function render(flash){var w=$("week");w.innerHTML="";var miss=0;
+ DAYS.forEach(function(d){var col=document.createElement("div");col.className="day";col.innerHTML="<h4>"+d.l+"</h4>";
+  S.filter(function(s){return s.d===d.k}).forEach(function(s){var n=s.p.length,pct=Math.min(100,Math.round(n/s.need*100)),col2=n>=s.need?"var(--ok)":(s.need-n>=2?"var(--gap)":"var(--beacon)");
+   var el=document.createElement("div");el.className="shift"+(s.id===flash?" flash":"");
+   el.innerHTML='<div class="t">'+s.f+"–"+s.t+" "+esc(s.n)+'</div><div class="bar"><i style="width:'+pct+"%;background:"+col2+'"></i></div><div class="who">'+n+" von "+s.need+" · "+esc(s.p.join(", ")||"noch niemand")+"</div>";
+   col.appendChild(el);if(s.id===flash)setTimeout(function(){el.classList.remove("flash")},1400)});w.appendChild(col)});
+ var g=$("gaps");g.innerHTML="";S.forEach(function(s){var m=s.need-s.p.length;if(m<=0)return;miss+=m;
+  var it=document.createElement("div");it.className="gapitem"+(m===1?" part":"");it.innerHTML="<span><b>"+day(s.d).l+"</b> "+esc(lab(s))+" · es fehlen "+m+"</span>";
+  var b=document.createElement("button");b.type="button";b.textContent="Aufruf vorbereiten";b.onclick=function(){toast("Aufruf liegt als Entwurf bereit. Sie schicken ihn selbst.")};it.appendChild(b);g.appendChild(it)});
+ if(!miss)g.innerHTML='<span class="hint">Alles besetzt.</span>';
+ $("kAuto").textContent=auto;$("kMin").textContent=(auto*3)+" Min.";$("kGaps").textContent=miss}
+Array.prototype.forEach.call(document.querySelectorAll(".try button[data-msg]"),function(b){b.onclick=function(){handle(b.getAttribute("data-msg"),b.getAttribute("data-who")||me)}});
+$("form").onsubmit=function(e){e.preventDefault();var v=$("text").value.trim();if(!v)return;$("text").value="";handle(v,me)};
+$("reset").onclick=init;init();
+})();
+</script>
+</body>
+</html>
