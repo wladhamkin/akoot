@@ -21,6 +21,7 @@
 - [Startseite](https://akoot.de/), Versprechen, Vorgehen, Angebot, häufige Fragen, Termin
 - [Studie](https://akoot.de/studie.html), Die 4 Hürden aus der Masterarbeit, was passiert und was hilft
 - [Ratgeber Ehrenamtssoftware auswählen](https://akoot.de/ehrenamtssoftware-auswaehlen.html), 12 Fragen vor dem Kauf, Warnzeichen im Angebot, wann Sie nichts kaufen sollten
+- [Ratgeber Ehrenamtsstunden erfassen](https://akoot.de/ehrenamtsstunden-erfassen.html), Ehrenamtspauschale 2026 960 Euro, was Träger belegen müssen, vier Wege der Erfassung, Checkliste
 - [Demo](https://akoot.de/demo.html), Beispiel einer Hilfsorganisation Musterstadt
 
 ## Kontakt
