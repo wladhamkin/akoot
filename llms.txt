@@ -1,0 +1,27 @@
+# akoot
+
+> akoot findet heraus, was das Ehrenamt in Hilfsorganisationen bremst, und löst das erste Problem gleich mit. Für Geschäftsführung und Leitung von Trägern, Verbänden und Kommunen in Düsseldorf, Köln und Nordrhein-Westfalen. Entstanden aus einer Masterarbeit an der Universität zu Köln. Ein Projekt von Enactus Köln e.V., umgesetzt und abgerechnet über Nösse Consulting GmbH, Leverkusen.
+
+## Kernaussagen
+
+- Neue Ehrenamtsplattformen scheitern selten an der Technik. Sie scheitern an Schatten-Infrastruktur aus WhatsApp, E-Mail und Excel, an mehr Abstimmung statt weniger, an der Frage, wer sie betreibt, und daran, dass Bindung wichtiger ist als Reichweite.
+- Deshalb steht bei akoot der Befund vor dem Werkzeug. Die Lösung fügt sich in vorhandene Systeme ein, statt eine weitere Insel zu schaffen.
+- Typisches erstes Problem sind Ehrenamtsstunden, die auf Papier zur Personalabteilung gehen. Ehrenamtliche tragen sie per Link ein, ohne eigene Lizenz in der Fachsoftware.
+- Der Mensch entscheidet, akoot unterstützt. Keine Daten über Klientinnen und Klienten.
+
+## Angebot
+
+- Vortrag, 60 Minuten, warum Ehrenamtsplattformen scheitern und was stattdessen hilft, für Geschäftsführungen, Vorstände und Verbände
+- Ehrenamts-Check, rund 2 Wochen, Befund und Plan
+- Erste Lösung, ein Monat im Alltag getestet
+- Begleitung, laufend, mit Betrieb, Wartung, Weiterentwicklung und festen Beratungsstunden
+
+## Seiten
+
+- [Startseite](https://akoot.de/), Versprechen, Vorgehen, Angebot, häufige Fragen, Termin
+- [Studie](https://akoot.de/studie.html), Die 4 Hürden aus der Masterarbeit, was passiert und was hilft
+- [Demo](https://akoot.de/demo.html), Beispiel einer Hilfsorganisation Musterstadt
+
+## Kontakt
+
+Wladimir Nikhamkin, Founder, Erstgespräch über https://akoot.de/#kontakt
